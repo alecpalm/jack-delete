@@ -5,6 +5,7 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-ser
 @keyframes slideDownFade{from{transform:translateY(-15px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes slideUpFade{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes newListingPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.02);opacity:0.95}}
+@keyframes successPulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:0.9}100%{transform:scale(1.05);opacity:1}}
 .wrap{max-width:860px;margin:0 auto;padding:20px}
 main{background:#fafbfc;border-radius:8px;padding:24px;margin:16px 0;border:1px solid #e5e7eb;transform:translateY(20px);opacity:0;animation:slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards}
 .contact-container, .realtor-container{background:#fafbfc;border-radius:8px;padding:24px;margin:16px 0;border:1px solid #e5e7eb;transform:translateY(20px);opacity:0;animation:slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;text-align:center}
@@ -112,11 +113,6 @@ h1{font-size:24px;margin:12px 0 6px}
   color: #fff;
   transform: scale(1.05);
   animation: successPulse 0.6s ease-out;
-}
-.submit-btn.success::before {
-  content: '✓';
-  margin-right: 8px;
-  font-size: 16px;
 }
 .hidden {
   display: none;
