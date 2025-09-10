@@ -23,6 +23,15 @@
   <link rel="icon" type="image/png" href="assets/favi.png">
 
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Map JavaScript -->
+  <script src="map.js"></script>
 </head>
 <body>
   <div class="wrap">
@@ -105,6 +114,16 @@
 
     </main>
 
+    <!-- Property Location Map Container -->
+    <section class="map-container">
+      <h2 class="section-title">Property Location</h2>
+      <p class="section-subtitle">16730 Nicklaus Drive #51, Sylmar, CA 91342</p>
+      <div id="propertyMap" class="property-map"></div>
+      <div class="map-info">
+        <p>Located in the peaceful Legends at Cascades community in Sylmar, with easy access to shopping, dining, and freeways.</p>
+      </div>
+    </section>
+
     <!-- Contact Form Container -->
     <section class="contact-container">
       <h2 class="section-title">Interested in this property?</h2>
@@ -115,7 +134,7 @@
             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
           </p>
           <input type="hidden" name="form-name" value="contact" />
-          <input type="hidden" name="subject" value="New Contact Form Submission - 16730 Nicklaus Dr #51" />
+          <input type="hidden" name="subject" value="New Contact Form Submission - 16730 Nicklaus Drive #51" />
           <input type="hidden" name="to" value="alec@civicvoicepartners.com" />
 
           <div class="form-group">
@@ -199,6 +218,7 @@
   </div>
 
   <script>
+
     function openModal(imgSrc) {
       const modal = document.getElementById('imageModal');
       const modalImg = document.getElementById('modalImage');
@@ -213,7 +233,8 @@
       document.body.style.overflow = 'auto';
     }
 
-    // Add click handlers to all gallery images
+
+    // Add click handlers to all gallery images and hero image
     document.addEventListener('DOMContentLoaded', function() {
       const galleryImages = document.querySelectorAll('.gallery img');
       galleryImages.forEach(img => {
@@ -221,6 +242,14 @@
           openModal(this.src);
         });
       });
+      
+      // Add click handler to hero image
+      const heroImage = document.querySelector('.hero img');
+      if (heroImage) {
+        heroImage.addEventListener('click', function() {
+          openModal(this.src);
+        });
+      }
     });
 
     // Close modal when clicking outside the image
