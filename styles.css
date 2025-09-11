@@ -4,7 +4,6 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-ser
 @keyframes fadeInBody{from{opacity:0}to{opacity:1}}
 @keyframes slideDownFade{from{transform:translateY(-15px);opacity:0}to{transform:translateY(0);opacity:1}}
 @keyframes slideUpFade{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes newListingPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.02);opacity:0.95}}
 @keyframes successPulse{0%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:0.9}100%{transform:scale(1.05);opacity:1}}
 .wrap{max-width:860px;margin:0 auto;padding:20px}
 main{background:#fafbfc;border-radius:8px;padding:24px;margin:16px 0;border:1px solid #e5e7eb;transform:translateY(20px);opacity:0;animation:slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards}
@@ -25,7 +24,18 @@ header{text-align:center;padding:12px 0 20px;transform:translateY(-15px);opacity
   .logo-divider{height:28px;margin:0 6px}
 }
 .mini{color:var(--muted);font-size:12px;margin-top:6px}
-.new-tag-above{background:#2563eb;color:#fff;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 12px 0;display:inline-block}
+.new-tag-above{
+  background: #2563eb;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+  display: inline-block;
+}
 .hero{margin:5px 0 24px;position:relative;transform:translateY(20px);opacity:0;animation:slideUpFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards}
 .hero img{width:100%;height:450px;object-fit:cover;object-position:center top;border-radius:6px;cursor:pointer;transition:opacity 0.3s}
 .hero img:hover{opacity:0.8}
@@ -35,10 +45,73 @@ header{text-align:center;padding:12px 0 20px;transform:translateY(-15px);opacity
 @media (max-width: 480px) {
   .hero img{height:180px}
 }
-h1{font-size:24px;margin:0 0 6px}
-.sub{color:var(--muted);margin:0 0 12px}
-.facts{margin:0 0 12px;font-size:15px}
-.price{font-size:22px;font-weight:700;margin:0 0 20px}
+h1{
+  font-size: 28px;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+.sub{
+  color: var(--muted);
+  margin: 0 0 16px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.sub::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236b7280'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.info-row {
+  display: flex;
+  gap: 24px;
+  margin: 0 0 24px;
+}
+.facts{
+  font-size: 15px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  flex: 1;
+  align-items: center;
+  min-height: 48px;
+  justify-content: space-between;
+}
+.fact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.fact-icon {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+.price{
+  font-size: 19px;
+  font-weight: 500;
+  color: #047857;
+  background: #ecfdf5;
+  padding: 0 20px;
+  border-radius: 8px;
+  border: 1px solid #a7f3d0;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  letter-spacing: -0.3px;
+}
 .details{margin:0 0 24px;font-size:15px;line-height:1.4}
 .actions{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 24px}
 .btn{display:inline-block;padding:10px 14px;border-radius:6px;text-decoration:none;font-weight:600;transition:all 0.2s ease}
@@ -142,4 +215,25 @@ footer{margin:32px 0 0;padding:20px 0;color:var(--muted);font-size:12px;text-ali
   .contact-value{font-size:12px;overflow-wrap:break-word;word-wrap:break-word}
   .actions{gap:10px;justify-content:center}
   .btn{padding:10px 16px;font-size:14px;flex:0 1 calc(50% - 5px);min-width:120px;text-align:center}
+  h1{font-size:24px}
+  .facts{
+    gap: 12px;
+    padding: 12px;
+    font-size: 14px;
+    justify-content: space-between;
+  }
+  .info-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .price {
+    font-size: 18px;
+    width: 100%;
+    justify-content: center;
+    padding: 0 16px;
+  }
+  .facts {
+    width: 100%;
+    justify-content: center;
+  }
 }
